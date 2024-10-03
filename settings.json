@@ -1,0 +1,122 @@
+{
+  "window.commandCenter": true,
+  "window.zoomLevel": 0.2,
+  "symbols.hidesExplorerArrows": false,
+  "workbench.iconTheme": "symbols",
+  "workbench.editor.showTabs": "single",
+  "workbench.layoutControl.enabled": false,
+  "workbench.colorCustomizations": {
+    "sideBar.background": "#15141f",
+    "sideBarSectionHeader.background": "#15141f",
+    "list.activeSelectionBackground": "#2a2838",
+    "list.inactiveSelectionBackground": "#2a2838",
+    "list.hoverBackground": "#2a2838",
+    "editor.background": "#15141f",
+    "editorLineNumber.activeForeground": "#ffffff",
+    "editorGutter.background": "#15141f"
+  },
+
+  // Editor config - UI
+  "editor.lineNumbers": "relative",
+  "editor.cursorBlinking": "expand",
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Cascadia Code NF SemiLight, 'Courier New', monospace",
+  "editor.fontSize": 13,
+
+  // Editor config - code & formatter
+  "editor.linkedEditing": true,
+  "editor.suggest.insertMode": "replace",
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports.ts": "always",
+    "source.organizeImports.ts": "always",
+    "source.removeUnusedImports": "always"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+
+  // Other configs
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  // VIM Config
+  "vim.handleKeys": {
+    "<C-p>": false,
+    "<C-b>": false,
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false
+  },
+  "vim.leader": "<Space>",
+  "vim.highlightedyank.enable": true,
+  // "vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",  <-- Select a color when decides a proper theme
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // Buffer navigation
+    { "before": ["<S-h>"], "commands": [":bprevious"] },
+    { "before": ["<S-l>"], "commands": [":bnext"] },
+
+    // Window Split
+    { "before": ["leader", "v"], "commands": [":vsplit"] },
+    { "before": ["leader", "s"], "commands": [":split"] },
+
+    // Windows splited navigations
+    {
+      "before": ["leader", "h"],
+      "commands": ["workbench.action.focusLeftGroup"]
+    },
+    {
+      "before": ["leader", "j"],
+      "commands": ["workbench.action.focusBelowGroup"]
+    },
+    {
+      "before": ["leader", "k"],
+      "commands": ["workbench.action.focusAboveGroup"]
+    },
+    {
+      "before": ["leader", "l"],
+      "commands": ["workbench.action.focusRightGroup"]
+    },
+
+    // File Tree - Explorer
+    // {"before": ["leader", "e"], "commands": ["workbench.explorer.fileView.focus"]},
+
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+
+    // Same action as Ctrl + p in vscode
+    // {"before": ["leader", "f"], "commands": ["workbench.action.quickOpen"]},
+
+    // Format the document (it format the JSON files in a weird way)
+    // {"before": ["leader", "p"], "commands": ["editor.action.formatDocument"] },
+
+    {
+      "before": ["g", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    // Stay in visual mode while indenting - Supported natively with the Vim extension
+    // { "before": [">"], "commands": ["editor.action.indentLines"] },
+    // { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+
+    // Move selected lines while staying in visual mode
+    { "before": ["J"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["K"], "commands": ["editor.action.moveLinesUpAction"] }
+
+    // toggle comment selection - same action as gcc in vim
+    // { "before": ["leader", "c"], "commands": ["editor.action.commentLine"] }
+  ],
+  "workbench.colorTheme": "Rosé Pine",
+  "window.menuBarVisibility": "compact"
+}
